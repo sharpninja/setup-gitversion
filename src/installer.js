@@ -10,7 +10,7 @@ module.exports = {installGitversion}
  */
 async function installGitversion(version) {
   if (process.platform === 'linux') {
-    await exec(path.join(__dirname, 'install-otp-ubuntu'), [version])
+    await exec(path.join(__dirname, 'install-gitversion-ubuntu'), [version])
     return
   }
 
