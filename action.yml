@@ -1,4 +1,4 @@
-name: Setup GitVersion
+name: GitHub Action to Setup GitVersion
 description: Set up GitVersion and add it to the PATH
 author: Stanley Goldman
 branding:
