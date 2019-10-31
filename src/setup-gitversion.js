@@ -18,7 +18,7 @@ async function main() {
     path.join(__dirname, 'gitversion-versions.txt')
   )
   let runGitversion = core.getInput('run-gitversion')
-  runGitversion = runGitversion == null ? false : runGitversion
+  runGitversion = runGitversion == null ? false : (!!runGitversion)
 
   let runGitversionArgs = core.getInput('run-gitversion-args')
   runGitversionArgs = runGitversionArgs == null ? [] : [runGitversionArgs]
@@ -27,7 +27,10 @@ async function main() {
   await installGitversion(gitversionVersion)
   console.log(`##[endgroup]`)
 
-  if (runGitversion) await exec('GitVersion', runGitversionArgs)
+  if (runGitversion) {
+    console.log("runGitversion", runGitversion)
+    await exec('GitVersion', runGitversionArgs)
+  } 
 }
 
 function checkPlatform() {
