@@ -11,8 +11,7 @@ jobs:
     name: GitVersion ${{matrix.pair.gitversion-version}}
     strategy:
       matrix:
-        pair:
-          gitversion-version: 1.9.1
+        gitversion-version: [5.1.1]
     steps:
       - uses: actions/checkout@v1.0.0
       - uses: actions/setup-setup-dotnet@v1
