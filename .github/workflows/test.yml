@@ -7,10 +7,11 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
     name: GitVersion ${{matrix.gitversion-version}}
     strategy:
       matrix:
+        os: [ubuntu-latest, macOS-latest, windows-latest]
         gitversion-version: [5.1.1]
     steps:
       - uses: actions/checkout@v1.0.0
