@@ -3,7 +3,7 @@ description: Set up GitVersion and add it to the PATH
 author: Stanley Goldman
 branding:
   color: blue
-  icon: tool
+  icon: arrow-down
 inputs:
   gitversion-version:
     required: true
