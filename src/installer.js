@@ -15,6 +15,6 @@ async function installGitversion(version) {
   }
 
   throw new Error(
-    '@actions/setup-elixir only supports Ubuntu Linux at this time'
+    '@actions/setup-gitversion only supports Ubuntu Linux at this time'
   )
 }
