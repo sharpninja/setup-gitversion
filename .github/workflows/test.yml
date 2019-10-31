@@ -20,7 +20,7 @@ jobs:
         with:
           gitversion-version: ${{matrix.gitversion-version}}
           run-gitversion: true
-          run-gitversion-args: "//version"
+          run-gitversion-args: "/version"
       - name: Run GitVersion tests
         run: |-
           GitVersion //updateassemblyinfo SharedAssemblyInfo.cs //ensureassemblyinfo
