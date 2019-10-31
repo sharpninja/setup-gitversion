@@ -20,11 +20,14 @@ async function main() {
   let runGitversion = core.getInput('run-gitversion')
   runGitversion = runGitversion == null ? true : runGitversion
 
+  let runGitversionArgs = core.getInput('run-gitversion-args')
+  runGitversionArgs = runGitversionArgs == null ? [] : [runGitversionArgs]
+
   console.log(`##[group]Installing GitVersion ${gitversionVersion}`)
   await installGitversion(gitversionVersion)
   console.log(`##[endgroup]`)
 
-  if (runGitversion) await exec('GitVersion')
+  if (runGitversion) await exec('GitVersion', runGitversionArgs)
 }
 
 function checkPlatform() {

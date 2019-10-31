@@ -19,7 +19,11 @@ jobs:
         uses: ./
         with:
           gitversion-version: ${{matrix.gitversion-version}}
+          run-gitversion: true
+          run-gitversion-args: "//version"
       - name: Run GitVersion tests
         run: |-
-          cd test-project
-          echo "Hello World"
+          GitVersion //updateassemblyinfo SharedAssemblyInfo.cs //ensureassemblyinfo
+          if [ ! -f "SharedAssemblyInfo.cs" ]; then
+            raise error "SharedAssemblyInfo.cs does not exist"
+          fi

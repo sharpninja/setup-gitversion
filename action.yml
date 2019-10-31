@@ -9,7 +9,10 @@ inputs:
     description: Version range or exact version of GitVersion to use
   run-gitversion:
     description: Whether to run GitVersion
-    default: true
+    default: false
+  run-gitversion-args:
+    description: Args to run with GitVersion
+    default: null
 runs:
   using: node12
   main: src/setup-gitversion.js
