@@ -23,7 +23,7 @@ jobs:
           run-gitversion-args: "/version"
       - name: Run GitVersion tests
         run: |-
-          GitVersion //updateassemblyinfo SharedAssemblyInfo.cs //ensureassemblyinfo
+          GitVersion /updateassemblyinfo SharedAssemblyInfo.cs /ensureassemblyinfo
           if [ ! -f "SharedAssemblyInfo.cs" ]; then
             raise error "SharedAssemblyInfo.cs does not exist"
           fi
