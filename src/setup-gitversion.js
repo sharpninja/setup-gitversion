@@ -1,6 +1,6 @@
 const core = require('@actions/core')
 const {exec} = require('@actions/exec')
-const {installElixir, installOTP: installGitversion} = require('./installer')
+const {installGitversion} = require('./installer')
 const {readFile} = require('fs').promises
 const path = require('path')
 const semver = require('semver')
