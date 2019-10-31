@@ -14,8 +14,8 @@ async function installGitversion(version) {
     return
   }
   
-  if (process.platform === 'macos') {
-    await exec(path.join(__dirname, 'install-gitversion-macos'), [version])
+  if (process.platform === 'darwin') {
+    await exec(path.join(__dirname, 'install-gitversion-darwin'), [version])
     return
   }
 
