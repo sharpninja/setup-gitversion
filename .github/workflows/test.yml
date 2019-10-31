@@ -8,7 +8,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: GitVersion ${{matrix.pair.gitversion-version}}
+    name: GitVersion ${{matrix.gitversion-version}}
     strategy:
       matrix:
         gitversion-version: [5.1.1]
@@ -18,7 +18,7 @@ jobs:
       - name: Use actions/setup-gitversion
         uses: ./
         with:
-          gitversion-version: ${{matrix.pair.gitversion-version}}
+          gitversion-version: ${{matrix.gitversion-version}}
       - name: Run GitVersion tests
         run: |-
           cd test-project
