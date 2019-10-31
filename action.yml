@@ -8,6 +8,7 @@ inputs:
   gitversion-version:
     description: Version range or exact version of GitVersion to use
   run-gitversion:
+    type: boolean
     description: Whether to run GitVersion
     default: false
   run-gitversion-args:
