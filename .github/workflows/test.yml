@@ -8,7 +8,7 @@ on:
 jobs:
   test:
     runs-on: ${{matrix.os}}
-    name: GitVersion ${{matrix.os}}/${{matrix.gitversion-version}}
+    name: ${{matrix.os}} - ${{matrix.gitversion-version}}
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest, windows-latest]
