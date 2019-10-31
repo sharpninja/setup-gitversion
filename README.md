@@ -9,6 +9,8 @@ This actions sets up GitVersion for use in Actions by:
 
 This action currently only supports Actions' `ubuntu-` and `macos-` runtimes. As GitVersion is already installed on Windows.
 
+This GitHub action is only relevant as long as https://github.com/microsoft/azure-pipelines-image-generation/issues/1364 is still an open issue. YMMV.
+
 ## Usage
 
 See [action.yml](action.yml).
