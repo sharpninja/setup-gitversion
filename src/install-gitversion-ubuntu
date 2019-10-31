@@ -5,6 +5,6 @@ set -eo pipefail
 version=$1
 
 cd /tmp
-wget https://github.com/GitTools/GitVersion/releases/download/$version/gitversion-linux-$version.tar.gz
+wget https://github.com/GitTools/GitVersion/releases/download/$version/gitversion-macos-$version.tar.gz
 tar xfv gitversion-linux-$version.tar.gz
 sudo mv GitVersion /usr/local/bin

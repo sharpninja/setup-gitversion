@@ -18,11 +18,6 @@ async function installGitversion(version) {
     await exec(path.join(__dirname, 'install-gitversion-macos'), [version])
     return
   }
-  
-  if (process.platform === 'windows') {
-    await exec(path.join(__dirname, 'install-gitversion-windows.bat'), [version])
-    return
-  }
 
   throw new Error(
     'unexpected platform: ' + process.platform
