@@ -8,25 +8,19 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: OTP ${{matrix.pair.otp-version}} / Elixir ${{matrix.pair.elixir-version}}
+    name: GitVersion ${{matrix.pair.gitversion-version}}
     strategy:
       matrix:
         pair:
-          # Full Versions
-          - otp-version: 22.0
-            elixir-version: 1.9.1
-          # Semver ranges
-          - otp-version: 21.x
-            elixir-version: <1.9.1
+          gitversion-version: 1.9.1
     steps:
       - uses: actions/checkout@v1.0.0
-      - name: Use actions/setup-elixir
+      - uses: actions/setup-setup-dotnet@v1
+      - name: Use actions/setup-gitversion
         uses: ./
         with:
-          otp-version: ${{matrix.pair.otp-version}}
-          elixir-version: ${{matrix.pair.elixir-version}}
-      - name: Run Mix project tests
+          gitversion-version: ${{matrix.pair.gitversion-version}}
+      - name: Run GitVersion tests
         run: |-
           cd test-project
-          mix deps.get
-          mix test
+          echo "Hello World"
