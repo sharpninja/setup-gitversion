@@ -20,7 +20,7 @@ async function installGitversion(version) {
   }
   
   if (process.platform === 'windows') {
-    await exec(path.join(__dirname, 'install-gitversion-windows'), [version])
+    await exec(path.join(__dirname, 'install-gitversion-windows.bat'), [version])
     return
   }
 
