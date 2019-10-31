@@ -13,8 +13,18 @@ async function installGitversion(version) {
     await exec(path.join(__dirname, 'install-gitversion-ubuntu'), [version])
     return
   }
+  
+  if (process.platform === 'macos') {
+    await exec(path.join(__dirname, 'install-gitversion-macos'), [version])
+    return
+  }
+  
+  if (process.platform === 'windows') {
+    await exec(path.join(__dirname, 'install-gitversion-windows'), [version])
+    return
+  }
 
   throw new Error(
-    '@actions/setup-gitversion only supports Ubuntu Linux at this time'
+    'unexpected platform: ' + process.platform
   )
 }
