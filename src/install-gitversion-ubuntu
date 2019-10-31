@@ -5,4 +5,6 @@ set -eo pipefail
 version=$1
 
 cd /tmp
-echo "Hello world"
+wget https://github.com/GitTools/GitVersion/releases/download/$version/gitversion-linux-$version.tar.gz
+tar xfv gitversion-linux-$version.tar.gz
+sudo mv GitVersion /usr/local/bin
