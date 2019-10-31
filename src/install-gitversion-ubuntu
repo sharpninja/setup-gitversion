@@ -5,3 +5,4 @@ set -eo pipefail
 version=$1
 
 cd /tmp
+echo "Hello world"
