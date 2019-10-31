@@ -31,9 +31,9 @@ async function main() {
 }
 
 function checkPlatform() {
-  if (process.platform !== 'linux')
+  if ((process.platform !== 'linux') || (process.platform !== 'macOS'))
     throw new Error(
-      '@actions/setup-gitversion only supports Ubuntu Linux at this time'
+      '@actions/setup-gitversion only supports Ubuntu Linux or MacOS; current: ' + process.platform
     )
 }
 
