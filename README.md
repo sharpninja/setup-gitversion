@@ -1,7 +1,7 @@
 # setup-gitversion
 
-[![](https://github.com/StanleyGoldman/setup-gitversion/workflows/Test/badge.svg)](https://github.com/actions/setup-elixir/actions)
-[![](https://github.com/StanleyGoldman/setup-gitversion/workflows/Licensed/badge.svg)](https://github.com/actions/setup-elixir/actions)
+[![](https://github.com/StanleyGoldman/setup-gitversion/workflows/Test/badge.svg)](https://github.com/actions/setup-gitversion/actions)
+[![](https://github.com/StanleyGoldman/setup-gitversion/workflows/Licensed/badge.svg)](https://github.com/actions/setup-gitversion/actions)
 
 This actions sets up GitVersion for use in Actions by:
 
