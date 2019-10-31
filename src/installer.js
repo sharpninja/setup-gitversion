@@ -1,32 +1,16 @@
 const {exec} = require('@actions/exec')
 const path = require('path')
-const semver = require('semver')
 
-module.exports = {installElixir, installOTP}
-
-/**
- * Install Elixir.
- *
- * @param {string} version
- * @param {string} arch
- */
-async function installElixir(version) {
-  let arch = 'all'
-  if (semver.gt('1.9.0', version)) arch = 'amd64'
-
-  if (process.platform === 'linux') {
-    await exec(path.join(__dirname, 'install-elixir-ubuntu'), [version, arch])
-  }
-}
+module.exports = {installGitversion}
 
 /**
  * Install OTP.
  *
  * @param {string} version
  */
-async function installOTP(version) {
+async function installGitversion(version) {
   if (process.platform === 'linux') {
-    await exec(path.join(__dirname, 'install-otp-ubuntu'), [version])
+    await exec(path.join(__dirname, 'install-gitversion-ubuntu'), [version])
     return
   }
 

@@ -1,20 +1,15 @@
-name: Setup Elixir
-description: Set up an Elixir/OTP environment and add it to the PATH
-author: GitHub
+name: Setup GitVersion
+description: Set up GitVersion and add it to the PATH
+author: Stanley Goldman
 branding:
   color: blue
-  icon: code
+  icon: tool
 inputs:
-  elixir-version:
-    description: Version range or exact version of Elixir to use
-  otp-version:
-    description: Version range or exact version of OTP to use
-  install-hex:
-    description: Whether to install Hex
-    default: true
-  install-rebar:
-    description: Whether to install Rebar
+  gitversion-version:
+    description: Version range or exact version of GitVersion to use
+  run-gitversion:
+    description: Whether to run GitVersion
     default: true
 runs:
   using: node12
-  main: src/setup-elixir.js
+  main: src/setup-gitversion.js
