@@ -7,7 +7,7 @@ This actions sets up GitVersion for use in Actions by:
 
 - Installing GitVersion
 
-**Note** Currently, this action currently only supports Actions' `ubuntu-` runtimes.
+This action currently only supports Actions' `ubuntu-` and `macos-` runtimes. As GitVersion is already installed on Windows.
 
 ## Usage
 
