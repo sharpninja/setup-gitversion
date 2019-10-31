@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-setup-dotnet@v1
       - uses: actions/setup-gitversion@v1.0.0
         with:
-          gitversion-version: 22.x
+          gitversion-version: 5.1.1
       - run: GitVersion
 ```
 
