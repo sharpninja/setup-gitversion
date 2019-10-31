@@ -18,7 +18,7 @@ async function main() {
     path.join(__dirname, 'gitversion-versions.txt')
   )
   let runGitversion = core.getInput('run-gitversion')
-  runGitversion = runGitversion == null ? false : (!!runGitversion)
+  runGitversion = runGitversion == null ? false : runGitversion
 
   let runGitversionArgs = core.getInput('run-gitversion-args')
   runGitversionArgs = runGitversionArgs == null ? [] : [runGitversionArgs]
