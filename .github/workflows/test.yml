@@ -11,7 +11,7 @@ jobs:
     name: ${{matrix.os}} - ${{matrix.gitversion-version}}
     strategy:
       matrix:
-        os: [ubuntu-latest, macOS-latest, windows-latest]
+        os: [ubuntu-latest, macOS-latest]
         gitversion-version: [5.1.1]
     steps:
       - uses: actions/checkout@v1.0.0
@@ -24,7 +24,31 @@ jobs:
           run-gitversion-args: "/version"
       - name: Run GitVersion tests
         run: |-
+          cd test-project
           GitVersion /updateassemblyinfo SharedAssemblyInfo.cs /ensureassemblyinfo
           if [ ! -f "SharedAssemblyInfo.cs" ]; then
             raise error "SharedAssemblyInfo.cs does not exist"
           fi
+
+  test-windows:
+    runs-on: windows-latest
+    name: windows-latest - ${{matrix.gitversion-version}}
+    strategy:
+      matrix:
+        gitversion-version: [5.1.1]
+    steps:
+      - uses: actions/checkout@v1.0.0
+      - uses: actions/setup-dotnet@v1
+      - name: Use actions/setup-gitversion
+        uses: ./
+        with:
+          gitversion-version: ${{matrix.gitversion-version}}
+          run-gitversion: true
+          run-gitversion-args: "/version"
+      - name: Run GitVersion tests
+        run: |-
+          cd test-project
+          GitVersion /updateassemblyinfo SharedAssemblyInfo.cs /ensureassemblyinfo
+          IF NOT EXIST "SharedAssemblyInfo.cs" {
+            EXIT /b 1
+          }
