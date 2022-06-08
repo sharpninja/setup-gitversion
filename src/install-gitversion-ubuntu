@@ -7,4 +7,4 @@ version=$1
 cd /tmp
 wget https://github.com/GitTools/GitVersion/releases/download/$version/gitversion-linux-x64-$version.tar.gz
 tar xfv gitversion-linux-x64-$version.tar.gz
-sudo mv GitVersion /usr/local/bin
+sudo mv gitversion /usr/local/bin
