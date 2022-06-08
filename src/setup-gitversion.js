@@ -27,7 +27,7 @@ async function main() {
   await installGitversion(gitversionVersion)
   console.log(`##[endgroup]`)
 
-  if (runGitversion) await exec('gitversion', runGitversionArgs)
+  if (runGitversion) await exec('gitversion', [], JSON.parse(runGitversionArgs))
 }
 
 function checkPlatform() {
